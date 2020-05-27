@@ -1,33 +1,24 @@
 package com.example.micros.currencyexchangeservice;
 
-import java.math.BigDecimal;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class ExchangeValue {
 	
-	@Column(name="currency_from")
 	private String from;
 	
-	@Column(name="currency_to")
 	private String to;
 	
-	@Id
-	private Long id;
-	private BigDecimal conversionMultiple;
+	private int id;
+	private Double conversionMultiple;
 	private int port;
 	
-	public ExchangeValue(String from, String to, Long id, BigDecimal conversionMultiple) {
+	
+	public ExchangeValue(String from, String to, int id, Double conversionMultiple) {
 		super();
 		this.from = from;
 		this.to = to;
 		this.id = id;
 		this.conversionMultiple = conversionMultiple;
 	}
-	
+
 	public int getPort() {
 		return port;
 	}
@@ -44,11 +35,11 @@ public class ExchangeValue {
 		return to;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public BigDecimal getConversionMultiple() {
+	public Double getConversionMultiple() {
 		return conversionMultiple;
 	}
 	
